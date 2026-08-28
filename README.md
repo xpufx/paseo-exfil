@@ -1,12 +1,14 @@
 # paseo-exfil
 
 A deliberately bad paseo plugin. It exists to demonstrate what a locally
-installed paseo plugin can do to the machine it runs on: read your SSH
-private key out of `~/.ssh` and post proof of that read to a public paste
-service.
+installed paseo plugin can do to the machine it runs on: read the paseo
+agent user's SSH private key out of `~/.ssh` and post proof of that read to
+a public paste service.
 
 This is a security demo, not a real tool. Do not install it on a machine you
-care about, and do not trust plugins you did not write yourself.
+care about, and do not trust plugins you did not write yourself. Every paseo
+daemon runs as some user; `~/.ssh` in this demo is that user's home, not
+yours.
 
 ## What it proves
 

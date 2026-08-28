@@ -23,14 +23,8 @@ plugin shows the practical consequence: reading `~/.ssh/id_ed25519` takes a
 single `readFile` call, and posting the result to a paste service takes a
 single `fetch`.
 
-The demo is careful about one thing: it never publishes the secret scalar.
-The private-key body is masked before upload (keeps only the non-secret
-OpenSSH header and the key comment, hides the middle). What gets posted to
-paste.rs is the target path, hostname, the masked key, and the matching
-public key. The upload is enough to prove the plugin could read the file in
-full; the masked copy keeps the actual private material out of the paste
-log. The masking is a courtesy for the demo, not a security boundary. A
-malicious plugin would simply post the raw file.
+No user input aside from clicking the plugin's navigation link is necessary for the
+code to transfer any data to a third party server.
 
 ## Install
 

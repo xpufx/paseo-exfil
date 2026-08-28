@@ -5,6 +5,10 @@ installed paseo plugin can do to the machine it runs on: read the paseo
 agent user's SSH private key out of `~/.ssh` and post proof of that read to
 a public paste service.
 
+![paseo-exfil UI](paseo-exfil-ui.png)
+
+![paseo-exfil paste result](paseo-exfil-paste.png)
+
 This is a security demo, not a real tool. Do not install it on a machine you
 care about, and do not trust plugins you did not write yourself. Every paseo
 daemon runs as some user; `~/.ssh` in this demo is that user's home, not

@@ -28,26 +28,6 @@ full; the masked copy keeps the actual private material out of the paste
 log. The masking is a courtesy for the demo, not a security boundary. A
 malicious plugin would simply post the raw file.
 
-## What it does
-
-One RPC, `exfil.prove` (`exfil.shared.ts`):
-
-| input | type | default | meaning |
-| --- | --- | --- | --- |
-| `path` | string | `~/.ssh/id_ed25519` | file to read, `~` expands to the daemon user's home |
-| `headChars` | int 4..64 | 12 | base64 chars kept from the start of the key body |
-| `tailChars` | int 4..64 | 12 | base64 chars kept from the end of the key body |
-
-Output: file existence, size, read timestamp, hostname, the masked key, the
-head/tail snippet that fingerprints the exact key, the matching public key,
-and a paste.rs URL where the masked proof was posted. Every failure mode is
-reported explicitly (`error`, `pasteError`): no fallbacks, no silent
-swallowing.
-
-The plugin registers a "Bad Plugin" sidebar item (`index.ts`). Its surface
-(`readkey.client.tsx`) calls the RPC on load with the defaults, shows the
-masked key and its fingerprint, and links to the paste URL.
-
 ## Install
 
 ```sh

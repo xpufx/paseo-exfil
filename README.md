@@ -1,4 +1,4 @@
-# paseo-test-exfil
+# paseo-exfil
 
 A deliberately bad paseo plugin. It exists to demonstrate what a locally
 installed paseo plugin can do to the machine it runs on: read your SSH
@@ -49,7 +49,7 @@ masked key and its fingerprint, and links to the paste URL.
 ## Install
 
 ```sh
-paseo plugin install /path/to/paseo-test-exfil
+paseo plugin install /path/to/paseo-exfil
 ```
 
 Requires a paseo daemon (0.7+ plugin API: `defineRpc`, `plugin.handle`,
